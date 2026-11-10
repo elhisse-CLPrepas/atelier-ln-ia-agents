@@ -1,0 +1,535 @@
+{
+  "status": "passed",
+  "pages": 29,
+  "format": "A4 portrait",
+  "outline_entries": 29,
+  "images_per_page": 1,
+  "cropping": false,
+  "renderer": "PyMuPDF",
+  "scope": "Assemblage et rendu ; ne certifie pas chaque affirmation du texte raster.",
+  "pdf_sha256": "c17866fa53e3f810da04491ad19fe44a1cb840bdf451da0e85488c377a26f725",
+  "records": [
+    {
+      "page": 1,
+      "id": "ouverture",
+      "source": "01-vue-generale.png",
+      "source_sha256": "fb3a7ef97285fc1182fd1a2409ec454f5d14dcfd047dd021bcad967297406767",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.394
+    },
+    {
+      "page": 2,
+      "id": "comprendre",
+      "source": "02-comprendre.png",
+      "source_sha256": "55ac8ed5e294f0050f434c32db95454adc28d430e2562570de2fc6da07aabecb",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.562
+    },
+    {
+      "page": 3,
+      "id": "comprendre-1",
+      "source": "03-comprendre-1.png",
+      "source_sha256": "1018b9a7c94252ef2d71a9a603cbc83a7af18deca1032a3309cf910a015d9dcc",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.369
+    },
+    {
+      "page": 4,
+      "id": "comprendre-2",
+      "source": "04-comprendre-2.png",
+      "source_sha256": "4560f3ff702a4efa0874e673422a22862c5eb10ebdb589110489ba6641ca677c",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.596
+    },
+    {
+      "page": 5,
+      "id": "comprendre-3",
+      "source": "05-comprendre-3.png",
+      "source_sha256": "bf7de90032bb593ece17d1e5d9a10b8ff395e2fa0c93efdc28cb873b419c149c",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.471
+    },
+    {
+      "page": 6,
+      "id": "comprendre-4",
+      "source": "06-comprendre-4.png",
+      "source_sha256": "c13ca3c506024e7b9acf705f8cb2039eb5b9d8cd0693bec170d9fc86e292bf24",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.379
+    },
+    {
+      "page": 7,
+      "id": "comprendre-5",
+      "source": "07-comprendre-5.png",
+      "source_sha256": "214c763ad26a1e22cea85fbaa874c2899a30837a002fec4ab556afc10f42a73e",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.682
+    },
+    {
+      "page": 8,
+      "id": "comprendre-mission",
+      "source": "08-comprendre-mission.png",
+      "source_sha256": "790db19eff7288b60a1c95bf5c99f7438e5f3c54c4268812fc4e40d593bb1221",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.482
+    },
+    {
+      "page": 9,
+      "id": "construire",
+      "source": "09-construire.png",
+      "source_sha256": "4bc77a66479df3f7b33b59f3eb4ef1613559398e0eb33e920e4b421ba650d22d",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.636
+    },
+    {
+      "page": 10,
+      "id": "construire-1",
+      "source": "10-construire-1.png",
+      "source_sha256": "47a9f91876cc16a6b6fbaee4654760d170b9dc5765e765204357b05a756e7891",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.082
+    },
+    {
+      "page": 11,
+      "id": "construire-2",
+      "source": "11-construire-2.png",
+      "source_sha256": "d0b6fd0f8df8958f389b65bc84fb3b1dff4ba6daa57210e434bb48b508224a02",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.401
+    },
+    {
+      "page": 12,
+      "id": "construire-3",
+      "source": "12-construire-3.png",
+      "source_sha256": "20394d7db0726525824b1f8227ed5ea664af9c776e6e41a58defbad3a9c811fa",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.487
+    },
+    {
+      "page": 13,
+      "id": "construire-4",
+      "source": "13-construire-4.png",
+      "source_sha256": "15831e1c42ae001db3a8c1f04f39aa0c9e90a029d89af8b0eae4a780dcd416e7",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.278
+    },
+    {
+      "page": 14,
+      "id": "construire-5",
+      "source": "14-construire-5.png",
+      "source_sha256": "6a3c2e90eeec47683bbb7a7db7a84c068966de2beac91d0b43c963d70daef415",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.357
+    },
+    {
+      "page": 15,
+      "id": "construire-mission",
+      "source": "15-construire-mission.png",
+      "source_sha256": "ac9678f98b437181aa68d04240bce390fd80e6335520b63f60b2e848b7d9c8e4",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.736
+    },
+    {
+      "page": 16,
+      "id": "pratiquer",
+      "source": "16-pratiquer.png",
+      "source_sha256": "f76aecde3f5b4f2bb18feb5d6650a19529df48c78755164b1a6662673e5aa556",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.373
+    },
+    {
+      "page": 17,
+      "id": "pratiquer-1",
+      "source": "17-pratiquer-1.png",
+      "source_sha256": "4c6064a5ed45906e3c2bb02472e266823c0253371a6bf47295211d97d1fed824",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.266
+    },
+    {
+      "page": 18,
+      "id": "pratiquer-2",
+      "source": "18-pratiquer-2.png",
+      "source_sha256": "c3852e7f7b3f86b9819716b711ffd50756cf327273416c10c445f68ac54ab898",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.54
+    },
+    {
+      "page": 19,
+      "id": "pratiquer-3",
+      "source": "19-pratiquer-3.png",
+      "source_sha256": "d8eaeec7e2e3cc9787ec5621e433b52489200ab3e5fe2227a047735df318376a",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.472
+    },
+    {
+      "page": 20,
+      "id": "pratiquer-4",
+      "source": "20-pratiquer-4.png",
+      "source_sha256": "d5713b438431f7a4626561b73e7a49220006be27bd3d5ad14808848cf6648723",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.351
+    },
+    {
+      "page": 21,
+      "id": "pratiquer-5",
+      "source": "21-pratiquer-5.png",
+      "source_sha256": "26e50dfd1859a821a95042eef793f4527a40c37dbc0c40910b33d21323c0868d",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.303
+    },
+    {
+      "page": 22,
+      "id": "pratiquer-mission",
+      "source": "22-pratiquer-mission.png",
+      "source_sha256": "2bd70b036299e256e4732d69cb5099bdb2c99e3484d1eb4d9e84fadde699d7a9",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.539
+    },
+    {
+      "page": 23,
+      "id": "produire",
+      "source": "23-produire.png",
+      "source_sha256": "7cfa492027a0ea8ff63b005bd188aeeca6d922e342ba9212ce66a1844a0d9f9a",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.442
+    },
+    {
+      "page": 24,
+      "id": "produire-1",
+      "source": "24-produire-1.png",
+      "source_sha256": "a6d120f411b50f6a99bac714a6e256ab299ca166921e0bdd7757ba2c006f8431",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.155
+    },
+    {
+      "page": 25,
+      "id": "produire-2",
+      "source": "25-produire-2.png",
+      "source_sha256": "e3685b32a54e477906b5fcc82d68bcf1730b6b7ce214d69ce724a8a22d67ca74",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.356
+    },
+    {
+      "page": 26,
+      "id": "produire-3",
+      "source": "26-produire-3.png",
+      "source_sha256": "4928f6d656a79484a1fe309f6b07da02cebfdebd6da836194f4c6668a294f987",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.127
+    },
+    {
+      "page": 27,
+      "id": "produire-4",
+      "source": "27-produire-4.png",
+      "source_sha256": "e4894d7fa76baa6f304844bc9d2b896cf7f28b9bf46004838d9203586cc894ac",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.38
+    },
+    {
+      "page": 28,
+      "id": "produire-5",
+      "source": "28-produire-5.png",
+      "source_sha256": "a2bb564c326d4a9b0952335d5ad436a6e5fddc9de4b1e11bdc4acaad0cbedafd",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.447
+    },
+    {
+      "page": 29,
+      "id": "produire-mission",
+      "source": "29-produire-mission.png",
+      "source_sha256": "32cdc9473823cdb17d4609f268d96ed76a6da77f4c25e2456ca6fb89271107e7",
+      "source_pixels": [
+        1024,
+        1536
+      ],
+      "rectangle_points": [
+        28.346456692913364,
+        17.00787401574803,
+        538.5826771653544,
+        807.8740157480316
+      ],
+      "effective_dpi": 136.9,
+      "render_mean_absolute_error": 2.714
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Cycle proposé pour l’atelier LN-IA",
+  "executable": false,
+  "implementation": "src/domain/production.js",
+  "steps": [
+    {
+      "id": "cadrer",
+      "action": "Vérifier le contrat",
+      "gate": "Critères et permissions présents"
+    },
+    {
+      "id": "entrees",
+      "action": "Contrôler les sources",
+      "gate": "Aucun blocage"
+    },
+    {
+      "id": "planifier",
+      "action": "Décrire le plan autorisé",
+      "gate": "Périmètre respecté"
+    },
+    {
+      "id": "agir",
+      "action": "Produire le brouillon",
+      "gate": "Budget disponible"
+    },
+    {
+      "id": "verifier",
+      "action": "Contrôler le résultat",
+      "gate": "Critères automatiques passés"
+    },
+    {
+      "id": "revue",
+      "action": "Demander une décision humaine",
+      "gate": "Décision réelle et commentaire"
+    },
+    {
+      "id": "livrer",
+      "action": "Préparer le résultat accepté",
+      "gate": "Approbation explicite"
+    },
+    {
+      "id": "capitaliser",
+      "action": "Conserver les preuves",
+      "gate": "Journal et bilan"
+    }
+  ],
+  "failure": "Arrêter, exporter le journal, corriger puis créer une nouvelle exécution.",
+  "note": "Ce JSON documente le cycle. Il ne constitue pas un moteur de workflow."
+}

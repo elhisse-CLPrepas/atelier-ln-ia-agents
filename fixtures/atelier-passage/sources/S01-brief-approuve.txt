@@ -1,0 +1,17 @@
+Identifiant : S01
+Statut : approuvé pour l’exercice
+Version : 2
+Date de validation : 10 novembre 2026
+Organisation fictive : Atelier Passage
+Titre de la séance : Produire une fiche projet
+Date fictive de la séance : 15 novembre 2026
+Début : 18 h 00
+Durée : 90 minutes
+Format : atelier en ligne de démonstration
+Public : adultes débutants
+Objectif : produire une fiche projet d’une page
+Prérequis : apporter une idée de projet fictif
+Appel à l’action : Préparez votre idée de projet pour la séance.
+Diffusion : brouillon local uniquement
+Lien d’inscription : aucun lien fourni
+Prix : non renseigné

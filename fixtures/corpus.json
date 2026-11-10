@@ -1,0 +1,5 @@
+[
+  {"id":"S01","source":"LNIA-CORPUS-01","title":"Mission","text":"Une mission précise l’objectif, les données autorisées, les actions permises et les critères de réception.","classification":"public-fictif","updatedAt":"2026-11-01"},
+  {"id":"S02","source":"LNIA-CORPUS-02","title":"Skill","text":"Un skill décrit une procédure réutilisable. Il ne crée pas à lui seul un agent et ne garantit pas le contrôle des permissions.","classification":"public-fictif","updatedAt":"2026-11-01"},
+  {"id":"S03","source":"LNIA-CORPUS-03","title":"Validation","text":"Le contrôle automatique vérifie des critères observables. La personne responsable décide si le livrable peut être accepté.","classification":"public-fictif","updatedAt":"2026-11-01"}
+]

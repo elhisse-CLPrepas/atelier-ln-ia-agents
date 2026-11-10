@@ -1,0 +1,886 @@
+{
+  "meta": {
+    "title": "Atelier LN-IA Agents et production",
+    "version": "1.0",
+    "date": "2026-11-10",
+    "status": "À relire",
+    "author": "Prof Abderrahman EL HISSE",
+    "duration": "4 séances de 120 minutes",
+    "scope": "Initiation, simulation locale et exécution supervisée dans Codex"
+  },
+  "modules": [
+    {
+      "id": "comprendre",
+      "title": "Comprendre les agents",
+      "duration": "120 min",
+      "objective": "Décrire un système agentique sans confondre ses composants et choisir un niveau de délégation adapté.",
+      "concepts": [
+        {
+          "title": "Un agent poursuit un objectif",
+          "text": "Un agent LLM utilise un modèle pour choisir des actions, employer des outils et examiner leurs résultats. Son environnement et ses permissions déterminent ce qu’il peut effectivement faire.",
+          "example": "Dans Codex, demander de corriger un défaut peut conduire à lire des fichiers, proposer une modification et lancer un contrôle autorisé."
+        },
+        {
+          "title": "Un workflow organise les étapes",
+          "text": "Un workflow définit un enchaînement. Il peut utiliser un modèle, des scripts, des agents et une revue humaine. Un enchaînement entièrement fixé par le code reste un workflow prédéfini.",
+          "example": "Lire un formulaire, appliquer trois règles et produire un PDF selon un gabarit ne nécessite pas toujours un agent."
+        },
+        {
+          "title": "Une mission décrit un résultat",
+          "text": "La mission indique le destinataire, les entrées, le livrable, les critères, les limites et le responsable de la validation. Un titre de rôle ne remplace pas ce contrat.",
+          "example": "Produire une fiche de deux pages à partir de trois sources validées est plus vérifiable que jouer le rôle d’expert."
+        },
+        {
+          "title": "Un skill rend une méthode réutilisable",
+          "text": "Un skill contient des instructions et parfois des ressources ou scripts. Il décrit quand employer une méthode. Il n’est ni un modèle supplémentaire ni une autorisation générale.",
+          "example": "Un skill de contrôle éditorial vérifie les faits, les dates et les liens d’un brouillon selon une grille stable."
+        },
+        {
+          "title": "L’autonomie se décrit et se limite",
+          "text": "La durée sans intervention, les outils accessibles et les décisions autorisées sont distincts. L’échelle A0 à A3 du dossier sert de repère local, sans constituer une norme.",
+          "example": "Un agent peut travailler longtemps dans une copie de dossier tout en restant incapable de publier une page."
+        }
+      ],
+      "exercise": {
+        "brief": "Classez cinq systèmes décrits dans le cahier participant et justifiez votre choix par une preuve observable.",
+        "steps": [
+          "Repérez qui choisit la prochaine action.",
+          "Identifiez les outils et les effets possibles.",
+          "Décrivez la mémoire et la supervision.",
+          "Proposez le système le plus simple qui satisfait le besoin."
+        ],
+        "deliverable": "Une matrice de classification accompagnée de cinq justifications.",
+        "acceptance": [
+          "Un script déterministe n’est pas présenté comme un agent LLM.",
+          "Le rôle, le workflow, le skill et l’outil sont distingués.",
+          "Chaque niveau d’autonomie comporte une limite et un moyen de reprise."
+        ]
+      }
+    },
+    {
+      "id": "construire",
+      "title": "Construire une mission et un skill",
+      "duration": "120 min",
+      "objective": "Rédiger un contrat de mission et une méthode réutilisable pour produire un livrable à partir de données contrôlées.",
+      "concepts": [
+        {
+          "title": "Partir du besoin utilisateur",
+          "text": "Un MVP est une première version limitée qui rend un service vérifiable à un utilisateur identifié. La présence d’un agent n’est pas en elle-même un résultat utile.",
+          "example": "Un formateur reçoit une fiche conforme au brief et la valide en quelques étapes observables."
+        },
+        {
+          "title": "Définir les entrées",
+          "text": "Chaque donnée utile possède une provenance, une date, un statut et un usage permis. Les informations contradictoires ou manquantes doivent être traitées avant la production.",
+          "example": "Deux annonces mentionnent des horaires différents. La source déclarée obsolète ne doit pas alimenter le message final."
+        },
+        {
+          "title": "Écrire un contrat testable",
+          "text": "Les critères portent sur le résultat et le comportement. Les limites définissent les fichiers accessibles, les actions autorisées, le budget et les conditions d’arrêt.",
+          "example": "La note doit mentionner trois faits fournis, tenir en 100 mots et rester dans le dossier de test."
+        },
+        {
+          "title": "Construire un skill court",
+          "text": "Le nom et la description permettent de repérer l’usage du skill. Les instructions expliquent la procédure et renvoient aux ressources nécessaires. Un skill doit rester ciblé.",
+          "example": "Une procédure de vérification d’annonce n’a pas besoin de contenir toute la documentation du site."
+        },
+        {
+          "title": "Préparer la preuve de réussite",
+          "text": "La grille d’acceptation est fixée avant l’exécution. Elle permet de comparer le livrable aux exigences sans se limiter à l’avis de l’agent qui l’a produit.",
+          "example": "Le relecteur vérifie l’horaire dans le jeu de données avant de lire l’autoévaluation du rédacteur."
+        }
+      ],
+      "exercise": {
+        "brief": "À partir du cas fictif Atelier Passage, préparez la mission de production d’une annonce et le skill de contrôle associé.",
+        "steps": [
+          "Sélectionnez les faits valides du jeu de données.",
+          "Écrivez le résultat et les critères d’acceptation.",
+          "Définissez les droits d’écriture et la condition de publication.",
+          "Rédigez un SKILL.md avec nom, description et procédure.",
+          "Relisez le contrat avec un autre participant."
+        ],
+        "deliverable": "Un contrat de mission, un SKILL.md et une grille de contrôle.",
+        "acceptance": [
+          "L’ancienne date est écartée avec justification.",
+          "Le skill ne s’accorde aucun droit supplémentaire.",
+          "Le responsable de la validation est nommé et les données fictives sont identifiées."
+        ]
+      }
+    },
+    {
+      "id": "pratiquer",
+      "title": "Pratiquer le cycle de production",
+      "duration": "120 min",
+      "objective": "Exécuter une chaîne de travail et expliquer ses arrêts, ses contrôles et ses reprises.",
+      "concepts": [
+        {
+          "title": "Un cycle avec retours possibles",
+          "text": "Le cycle proposé dans cet atelier est : cadrer, contrôler les entrées, planifier, agir, vérifier, faire relire, livrer et capitaliser. Un défaut peut provoquer un retour vers une étape précédente.",
+          "example": "Une date absente bloque la production avant la rédaction. Un défaut de forme peut être corrigé après vérification."
+        },
+        {
+          "title": "Des contrôles à plusieurs niveaux",
+          "text": "Les règles déterministes vérifient des formats ou des conditions précises. La revue humaine examine le sens et l’utilité. Le modèle peut assister ces contrôles sans être l’unique juge.",
+          "example": "Un script vérifie la présence d’un champ. Le formateur juge si l’exercice correspond au niveau des participants."
+        },
+        {
+          "title": "Une issue doit mener à une décision",
+          "text": "Dans cet atelier, issue désigne une anomalie à traiter. Elle possède un identifiant, une gravité, une preuve, un responsable et une condition de clôture. L’issue du processus désigne aussi son résultat.",
+          "example": "ISS-003 : la source est périmée. La mission reste bloquée jusqu’à son remplacement ou à une décision explicite."
+        },
+        {
+          "title": "Un journal rend la reprise possible",
+          "text": "Le journal conserve les étapes, leurs résultats, les interventions et les limites atteintes. Il décrit des événements utiles, sans demander la divulgation d’un raisonnement interne.",
+          "example": "Après une interruption, on retrouve la dernière version vérifiée, les contrôles réussis et le point restant à trancher."
+        },
+        {
+          "title": "Une simulation prépare l’essai réel",
+          "text": "Le laboratoire du mini-site applique des règles locales. Il permet de comprendre les transitions et les blocages. Aucun modèle n’est appelé dans cette simulation.",
+          "example": "L’incident de budget montre la règle d’arrêt. Il ne mesure pas le coût réel d’un fournisseur de modèles."
+        }
+      ],
+      "exercise": {
+        "brief": "Faites fonctionner le laboratoire en cas normal puis provoquez trois incidents et documentez leur traitement.",
+        "steps": [
+          "Exécutez le cas normal et identifiez le point de revue humaine.",
+          "Retirez une source obligatoire.",
+          "Examinez une instruction malveillante présente dans une source.",
+          "Réduisez le budget et observez l’arrêt.",
+          "Exportez le journal et expliquez la reprise autorisée."
+        ],
+        "deliverable": "Un journal normal et trois fiches d’incident avec décision de reprise.",
+        "acceptance": [
+          "Un cas incomplet n’est pas déclaré accepté.",
+          "Une source externe ne modifie pas les permissions.",
+          "Les coûts simulés sont explicitement distingués des coûts réels."
+        ]
+      }
+    },
+    {
+      "id": "produire",
+      "title": "Produire un MVP vérifiable",
+      "duration": "120 min",
+      "objective": "Réaliser une première production supervisée dans Codex et constituer un dossier de preuves réutilisable.",
+      "concepts": [
+        {
+          "title": "Choisir un périmètre utile",
+          "text": "Le premier MVP résout un problème limité avec les outils disponibles. Les intégrations plus complexes viennent après une preuve de valeur et une analyse des contraintes.",
+          "example": "Produire une fiche validée dans un dossier local avant d’envisager une publication automatique."
+        },
+        {
+          "title": "Exécuter dans Codex avec un contrat",
+          "text": "Codex peut agir dans le projet selon les accès disponibles. La mission précise les fichiers utiles et les actions permises. Les comptes, extensions et outils doivent être opérationnels sur votre poste.",
+          "example": "L’agent lit le brief, crée le brouillon et exécute les contrôles autorisés. Vous acceptez ou refusez le résultat."
+        },
+        {
+          "title": "Mesurer le travail complet",
+          "text": "Relevez le cadrage, les interventions, la revue et les corrections. Conservez les échecs. Le gain utile porte sur un livrable accepté, pas seulement sur la vitesse du premier jet.",
+          "example": "Une rédaction rapide qui exige une longue correction peut produire un gain nul."
+        },
+        {
+          "title": "Capitaliser ce qui a été testé",
+          "text": "Archivez les sources, la mission, le résultat, les contrôles et les décisions. Une méthode devient réutilisable lorsqu’une autre personne peut comprendre ses conditions de réussite.",
+          "example": "La fiche de portfolio explique le besoin, les droits accordés, les limites rencontrées et la reprise possible."
+        },
+        {
+          "title": "Étendre après décision",
+          "text": "Un service autonome avec backend, comptes et appels modèles est une extension technique. Il demande son propre cadrage, ses essais et son autorisation. Cette version du pack ne le déploie pas.",
+          "example": "Après plusieurs essais supervisés, on peut étudier une file de missions côté serveur avec contrôle d’accès et limites de dépense."
+        }
+      ],
+      "exercise": {
+        "brief": "Produisez une annonce factuelle à partir du cas Atelier Passage puis remettez votre dossier de preuves.",
+        "steps": [
+          "Écrivez votre temps de référence sans inventer une mesure.",
+          "Lancez la mission avec le prompt maître dans Codex.",
+          "Contrôlez chaque critère sur le livrable.",
+          "Corrigez les écarts et consignez les interventions.",
+          "Présentez le résultat en trois minutes et effectuez une modification demandée."
+        ],
+        "deliverable": "Une annonce, une fiche de contrôle, un journal d’exécution et une fiche de portfolio.",
+        "acceptance": [
+          "Le contenu reste fidèle aux données validées.",
+          "Aucun envoi ou publication externe n’a lieu sans autorisation.",
+          "Le participant explique une limite, une correction et une méthode de reprise."
+        ]
+      }
+    }
+  ],
+  "slides": [
+    {
+      "id": "slide-01",
+      "title": "Un atelier pour produire avec des agents",
+      "kicker": "Ouverture",
+      "bullets": [
+        "Comprendre les composants.",
+        "Construire une mission.",
+        "Pratiquer avec des contrôles.",
+        "Produire une preuve utile."
+      ],
+      "notes": "Présenter les quatre séances de deux heures. Le support reste utilisable en huit heures réparties selon le groupe.",
+      "activity": "Citez une production que vous répétez souvent."
+    },
+    {
+      "id": "slide-02",
+      "title": "Quel travail accepteriez-vous de déléguer",
+      "kicker": "Question de départ",
+      "bullets": [
+        "Choisir un besoin réel.",
+        "Nommer le résultat attendu.",
+        "Identifier l’erreur la plus coûteuse."
+      ],
+      "notes": "Faire formuler un exemple par participant. Éviter de commencer par le nom d’un outil.",
+      "activity": "Écrivez un résultat et une erreur bloquante."
+    },
+    {
+      "id": "slide-03",
+      "title": "Cinq composants à distinguer",
+      "kicker": "Comprendre",
+      "bullets": [
+        "Le modèle interprète et génère.",
+        "L’outil effectue une opération.",
+        "Le skill décrit une méthode.",
+        "La mission fixe le résultat.",
+        "Le workflow organise le travail."
+      ],
+      "notes": "Un agent peut coordonner ces composants. Les termes ne désignent pas cinq agents différents.",
+      "activity": "Associez chaque composant à un fichier ou à une action."
+    },
+    {
+      "id": "slide-04",
+      "title": "Script workflow ou agent",
+      "kicker": "Comprendre",
+      "bullets": [
+        "Le script suit une logique programmée.",
+        "Le workflow suit un chemin défini.",
+        "L’agent peut choisir ses prochaines actions."
+      ],
+      "notes": "Un workflow peut contenir des étapes utilisant un LLM. La présence d’un LLM ne rend pas tout le système autonome.",
+      "activity": "Classez un traitement de formulaire à règles fixes."
+    },
+    {
+      "id": "slide-05",
+      "title": "Classer avec des critères techniques",
+      "kicker": "Classification",
+      "bullets": [
+        "Flux de décision.",
+        "Outils et effets.",
+        "Mémoire et déclenchement.",
+        "Supervision et coordination.",
+        "Environnement et contrôles."
+      ],
+      "notes": "Introduire les huit critères de la matrice. Plusieurs propriétés coexistent dans un même système.",
+      "activity": "Décrivez un système sans lui attribuer une personnalité."
+    },
+    {
+      "id": "slide-06",
+      "title": "Quatre niveaux de délégation",
+      "kicker": "Échelle locale",
+      "bullets": [
+        "A0 : l’IA propose.",
+        "A1 : elle agit dans une copie.",
+        "A2 : elle exécute une chaîne encadrée.",
+        "A3 : elle réalise certaines actions opérationnelles autorisées."
+      ],
+      "notes": "Cette échelle vient du dossier de travail. Elle n’est pas une norme ni une mesure du niveau d’un modèle.",
+      "activity": "Placez votre besoin au niveau le plus limité qui suffit."
+    },
+    {
+      "id": "slide-07",
+      "title": "Observer avant de choisir",
+      "kicker": "Fin de la première séance",
+      "bullets": [
+        "Qui décide de l’étape suivante ?",
+        "Quel outil agit ?",
+        "Quelle preuve reste ?",
+        "Qui peut reprendre ?"
+      ],
+      "notes": "Corriger la classification des cinq systèmes. Accepter les réponses nuancées lorsque les informations sont incomplètes.",
+      "activity": "Remettez votre matrice argumentée."
+    },
+    {
+      "id": "slide-08",
+      "title": "Définir un MVP utile",
+      "kicker": "Construire",
+      "bullets": [
+        "Un utilisateur identifié.",
+        "Un problème limité.",
+        "Un livrable observable.",
+        "Un critère de réussite."
+      ],
+      "notes": "Le MVP n’est pas une démonstration de complexité. Il doit pouvoir être essayé dans les conditions de l’atelier.",
+      "activity": "Rédigez une phrase : pour qui, quel résultat, quelle preuve."
+    },
+    {
+      "id": "slide-09",
+      "title": "Le contrat de mission",
+      "kicker": "Construire",
+      "bullets": [
+        "Entrées et sources.",
+        "Résultat et critères.",
+        "Permissions et budget.",
+        "Arrêt, revue et reprise."
+      ],
+      "notes": "Demander un résultat mesurable. Une liste de rôles ne suffit pas à préciser une mission.",
+      "activity": "Repérez le champ manquant dans votre premier brief."
+    },
+    {
+      "id": "slide-10",
+      "title": "Contrôler les données d’entrée",
+      "kicker": "Construire",
+      "bullets": [
+        "Provenance et statut.",
+        "Date de validité.",
+        "Champs obligatoires.",
+        "Contradictions et données sensibles."
+      ],
+      "notes": "Utiliser le cas fictif Atelier Passage. Une source obsolète reste conservée dans l’historique mais ne doit pas servir au résultat actuel.",
+      "activity": "Choisissez les faits utilisables et justifiez chaque rejet."
+    },
+    {
+      "id": "slide-11",
+      "title": "Écrire un skill ciblé",
+      "kicker": "Construire",
+      "bullets": [
+        "Un nom stable.",
+        "Une description de déclenchement.",
+        "Une procédure courte.",
+        "Des ressources utiles au besoin."
+      ],
+      "notes": "Un skill ne crée pas un nouveau modèle et n’accorde pas de permissions. Le contrat de mission et les règles du projet restent applicables.",
+      "activity": "Écrivez la description d’un skill de vérification."
+    },
+    {
+      "id": "slide-12",
+      "title": "Donner des outils avec une limite",
+      "kicker": "Construire",
+      "bullets": [
+        "Lire n’est pas publier.",
+        "Une copie n’est pas la production.",
+        "Un outil a un périmètre.",
+        "Un échec doit rester observable."
+      ],
+      "notes": "Montrer une action de lecture et une action d’écriture. Les contrôles doivent être adaptés à leurs effets.",
+      "activity": "Supprimez un accès inutile de votre mission."
+    },
+    {
+      "id": "slide-13",
+      "title": "Un agent ou plusieurs",
+      "kicker": "Coordination",
+      "bullets": [
+        "Un agent principal suffit souvent au premier essai.",
+        "Des tâches indépendantes peuvent être séparées.",
+        "La coordination ajoute des échanges et du coût."
+      ],
+      "notes": "Les rôles peuvent être exécutés successivement par un même agent. Une équipe de rôles n’implique pas une exécution parallèle.",
+      "activity": "Expliquez une dépendance entre deux tâches."
+    },
+    {
+      "id": "slide-14",
+      "title": "Vérifier le contrat avant l’exécution",
+      "kicker": "Fin de la deuxième séance",
+      "bullets": [
+        "La sortie est définie.",
+        "Les faits sont contrôlés.",
+        "Les droits sont explicites.",
+        "La validation est attribuée."
+      ],
+      "notes": "Faire une revue croisée du contrat et du skill. La revue porte sur ce qui pourrait rendre le résultat ambigu ou non vérifiable.",
+      "activity": "Remettez mission, skill et grille."
+    },
+    {
+      "id": "slide-15",
+      "title": "Un cycle de production en huit étapes",
+      "kicker": "Pratiquer",
+      "bullets": [
+        "Cadrer et contrôler les entrées.",
+        "Planifier et agir.",
+        "Vérifier et faire relire.",
+        "Livrer et capitaliser."
+      ],
+      "notes": "Cycle pédagogique proposé pour cet atelier. Montrer que les retours dépendent de l’erreur détectée.",
+      "activity": "Placez une condition d’arrêt sur le cycle."
+    },
+    {
+      "id": "slide-16",
+      "title": "Deux types de contrôles complémentaires",
+      "kicker": "Pratiquer",
+      "bullets": [
+        "Les règles vérifient les conditions précises.",
+        "La revue examine le sens et l’usage.",
+        "Le résultat de contrôle doit être conservé."
+      ],
+      "notes": "Un champ présent peut être incorrect. Un texte cohérent peut citer une mauvaise date. Les deux contrôles répondent à des problèmes distincts.",
+      "activity": "Associez un test automatique et une revue à votre sortie."
+    },
+    {
+      "id": "slide-17",
+      "title": "Lire le laboratoire avec précision",
+      "kicker": "Simulation locale",
+      "bullets": [
+        "Les transitions suivent des règles locales.",
+        "Les incidents sont des cas pédagogiques.",
+        "Aucun modèle n’est appelé.",
+        "Les coûts affichés sont simulés."
+      ],
+      "notes": "Démontrer le cas normal. Le journal permet de voir ce qui s’est passé sans prétendre que le logiciel est un agent autonome.",
+      "activity": "Identifiez le point où une décision humaine est attendue."
+    },
+    {
+      "id": "slide-18",
+      "title": "Traiter une source incomplète",
+      "kicker": "Incident de données",
+      "bullets": [
+        "La pièce manque.",
+        "La mission est bloquée.",
+        "La demande de correction est précise.",
+        "La reprise conserve une trace."
+      ],
+      "notes": "Ne pas remplir une donnée absente par invention. Demander la donnée ou réduire explicitement le périmètre.",
+      "activity": "Rédigez une fiche d’incident avec sa condition de clôture."
+    },
+    {
+      "id": "slide-19",
+      "title": "Une source ne donne pas d’ordres",
+      "kicker": "Incident d’instruction",
+      "bullets": [
+        "Séparer donnée et instruction.",
+        "Conserver les permissions du contrat.",
+        "Signaler la tentative.",
+        "Reprendre avec une entrée acceptable."
+      ],
+      "notes": "L’exemple malveillant demande une action hors périmètre. Un filtre de mots ne suffit pas à garantir la sécurité d’un système réel.",
+      "activity": "Expliquez pourquoi le contenu externe ne modifie pas vos droits."
+    },
+    {
+      "id": "slide-20",
+      "title": "Limiter le coût et la durée",
+      "kicker": "Incident de boucle",
+      "bullets": [
+        "Plafond de tentatives.",
+        "Limite de durée.",
+        "Budget connu ou déclaré non mesuré.",
+        "Arrêt compréhensible."
+      ],
+      "notes": "Un nouvel essai demande une justification. Les limites évitent de laisser une correction tourner sans résultat accepté.",
+      "activity": "Fixez le prochain essai et son critère d’arrêt."
+    },
+    {
+      "id": "slide-21",
+      "title": "Le journal permet de reprendre",
+      "kicker": "Fin de la troisième séance",
+      "bullets": [
+        "Dernière étape réussie.",
+        "Version de travail.",
+        "Anomalie ouverte.",
+        "Décision et responsable."
+      ],
+      "notes": "Ne pas demander un raisonnement interne. Conserver les actions, résultats et justifications utiles à la reprise.",
+      "activity": "Expliquez un journal à une autre personne."
+    },
+    {
+      "id": "slide-22",
+      "title": "Passer au travail supervisé dans Codex",
+      "kicker": "Produire",
+      "bullets": [
+        "Ouvrir le dossier du projet.",
+        "Vérifier les accès disponibles.",
+        "Lire le contrat.",
+        "Exécuter une mission limitée."
+      ],
+      "notes": "L’expérience réelle dépend du poste et des accès. Le mini-site pédagogique fonctionne sans clé de modèle.",
+      "activity": "Lancez la mission avec le prompt maître fourni."
+    },
+    {
+      "id": "slide-23",
+      "title": "Accepter une production avec des preuves",
+      "kicker": "Produire",
+      "bullets": [
+        "Comparer chaque critère au livrable.",
+        "Corriger les écarts.",
+        "Nommer le responsable.",
+        "Conserver la décision finale."
+      ],
+      "notes": "L’autoévaluation de l’agent est une aide. La décision finale doit être fondée sur la sortie et les critères.",
+      "activity": "Contrôlez un fait sans lire d’abord l’autoévaluation."
+    },
+    {
+      "id": "slide-24",
+      "title": "Mesurer le travail complet",
+      "kicker": "Produire",
+      "bullets": [
+        "Cadrage et interventions.",
+        "Vérification et correction.",
+        "Délai jusqu’à l’acceptation.",
+        "Coût et échecs conservés."
+      ],
+      "notes": "Un temps non relevé reste non mesuré. Une comparaison exige des tâches de difficulté comparable.",
+      "activity": "Complétez votre journal sans estimer ce que vous n’avez pas observé."
+    },
+    {
+      "id": "slide-25",
+      "title": "Les bénéfices dépendent du contexte",
+      "kicker": "Avantages",
+      "bullets": [
+        "Réduire certaines tâches répétées.",
+        "Rendre les étapes explicites.",
+        "Faciliter les variantes.",
+        "Capitaliser une méthode."
+      ],
+      "notes": "Présenter des possibilités à tester et non des gains acquis. La formation doit permettre d’identifier les cas où l’agent n’aide pas.",
+      "activity": "Nommez un bénéfice et sa mesure possible."
+    },
+    {
+      "id": "slide-26",
+      "title": "Huit risques à rendre observables",
+      "kicker": "Contrôles",
+      "bullets": [
+        "Données fausses ou périmées.",
+        "Instructions externes et fuites.",
+        "Actions non autorisées.",
+        "Coûts, erreurs répétées et jugement délégué."
+      ],
+      "notes": "Associer à chaque risque un contrôle et une preuve. La revue doit rester proportionnée aux effets de la mission.",
+      "activity": "Choisissez le risque principal de votre MVP."
+    },
+    {
+      "id": "slide-27",
+      "title": "Présenter un dossier professionnel",
+      "kicker": "Portfolio",
+      "bullets": [
+        "Besoin et périmètre.",
+        "Mission et sources.",
+        "Livrable et contrôles.",
+        "Limites, coût et reprise."
+      ],
+      "notes": "Le dossier doit permettre à une autre personne de comprendre ce qui a été réalisé. Un écran seul ne suffit pas à décrire la méthode.",
+      "activity": "Présentez votre production en trois minutes."
+    },
+    {
+      "id": "slide-28",
+      "title": "Décider de la prochaine extension",
+      "kicker": "Fin de l’atelier",
+      "bullets": [
+        "Garder ce qui fonctionne.",
+        "Réparer ce qui bloque.",
+        "Tester un cas nouveau.",
+        "Élargir seulement le périmètre justifié."
+      ],
+      "notes": "Rappeler la distinction entre simulation, Codex supervisé et futur service autonome. La nouvelle étape part d’une preuve et d’un besoin.",
+      "activity": "Écrivez votre prochaine mission et sa preuve d’acceptation."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "question": "Un script lit trois champs et applique toujours les mêmes règles. Comment le qualifier ?",
+      "options": [
+        "Agent entièrement autonome",
+        "Traitement déterministe",
+        "Équipe de modèles"
+      ],
+      "correct": 1,
+      "explanation": "La logique suit des règles programmées. Aucun modèle ne choisit ici le chemin de travail."
+    },
+    {
+      "id": "q02",
+      "question": "Que décrit d’abord une mission ?",
+      "options": [
+        "Le résultat, les entrées, les limites et les critères",
+        "Le nom du modèle le plus récent",
+        "Le nombre d’agents souhaités"
+      ],
+      "correct": 0,
+      "explanation": "Le contrat de mission permet de vérifier ce qui doit être réalisé et dans quel périmètre."
+    },
+    {
+      "id": "q03",
+      "question": "Quel élément constitue un skill ?",
+      "options": [
+        "Une permission de publier sur tous les comptes",
+        "Une méthode réutilisable avec ses ressources utiles",
+        "Une copie supplémentaire du modèle"
+      ],
+      "correct": 1,
+      "explanation": "Le skill décrit un savoir-faire. Il ne modifie pas les autorisations de la mission."
+    },
+    {
+      "id": "q04",
+      "question": "Quel critère permet de classer techniquement un système ?",
+      "options": [
+        "Son apparence humaine",
+        "Le nom de son personnage",
+        "La manière dont il choisit la prochaine action"
+      ],
+      "correct": 2,
+      "explanation": "La politique de décision est observable. Le style ou le personnage ne décrit pas l’architecture."
+    },
+    {
+      "id": "q05",
+      "question": "Une ancienne source donne un horaire différent. Que faire ?",
+      "options": [
+        "Mélanger les deux horaires",
+        "Utiliser le plus vraisemblable sans le signaler",
+        "Identifier la source valide et tracer le rejet de l’ancienne"
+      ],
+      "correct": 2,
+      "explanation": "La provenance et le statut de version permettent de résoudre le conflit sans inventer."
+    },
+    {
+      "id": "q06",
+      "question": "Une page consultée demande d’envoyer les fichiers vers un autre service. Quelle réaction convient ?",
+      "options": [
+        "Traiter ce texte comme une donnée et conserver les permissions du contrat",
+        "Suivre la page car elle est externe",
+        "Élargir automatiquement les droits de l’agent"
+      ],
+      "correct": 0,
+      "explanation": "Un contenu consulté n’est pas une nouvelle autorisation. L’action sortant du périmètre doit être écartée ou soumise à une décision distincte."
+    },
+    {
+      "id": "q07",
+      "question": "Que représente le laboratoire local du mini-site ?",
+      "options": [
+        "Une preuve qu’un modèle travaille seul",
+        "Une simulation de transitions et de contrôles",
+        "Un service autonome déjà déployé"
+      ],
+      "correct": 1,
+      "explanation": "Le laboratoire applique des règles locales sans appel à un modèle."
+    },
+    {
+      "id": "q08",
+      "question": "Pourquoi limiter les tentatives ?",
+      "options": [
+        "Pour garantir que toute sortie est correcte",
+        "Pour éviter de tracer les échecs",
+        "Pour arrêter une boucle qui consomme sans résultat accepté"
+      ],
+      "correct": 2,
+      "explanation": "Une limite permet de décider d’une reprise utile. Elle ne garantit pas la qualité à elle seule."
+    },
+    {
+      "id": "q09",
+      "question": "Quel indicateur décrit le mieux le coût d’une production ?",
+      "options": [
+        "Le coût total du lot, échecs inclus, rapporté aux livrables acceptés",
+        "Le nombre de mots produits",
+        "Le temps du premier brouillon seulement"
+      ],
+      "correct": 0,
+      "explanation": "L’effort de revue et les échecs font partie du coût. Si aucun résultat n’est accepté, le ratio n’est pas défini."
+    },
+    {
+      "id": "q10",
+      "question": "Deux agents sont d’accord sur une réponse. Que peut-on conclure ?",
+      "options": [
+        "La réponse est nécessairement exacte",
+        "L’accord est un signal à compléter par les preuves prévues",
+        "La revue humaine est devenue inutile"
+      ],
+      "correct": 1,
+      "explanation": "Les agents peuvent partager une source ou une erreur. L’accord ne remplace pas un contrôle indépendant."
+    },
+    {
+      "id": "q11",
+      "question": "Quel élément rend un dossier de preuves utile ?",
+      "options": [
+        "Un résultat sans ses sources",
+        "Une capture sans explication",
+        "La mission, la sortie, les contrôles et la décision de validation"
+      ],
+      "correct": 2,
+      "explanation": "L’ensemble permet de comprendre ce qui a été produit et de reprendre le travail."
+    },
+    {
+      "id": "q12",
+      "question": "Quand envisager un backend autonome ?",
+      "options": [
+        "Après cadrage, essais, contrôle des accès et autorisation du périmètre",
+        "Dès que le mot agent apparaît dans le projet",
+        "Pour remplacer les critères d’acceptation"
+      ],
+      "correct": 0,
+      "explanation": "Le service autonome constitue une extension distincte du simulateur et de l’exécution supervisée."
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "Agent LLM",
+      "back": "Système qui utilise un modèle pour choisir des actions et des outils afin d’atteindre un objectif dans un périmètre donné."
+    },
+    {
+      "front": "Workflow",
+      "back": "Organisation des étapes, des conditions et des responsabilités. Il peut être prédéfini ou intégrer des décisions d’un agent."
+    },
+    {
+      "front": "Mission",
+      "back": "Contrat précisant le résultat, les entrées, les critères, les limites et la validation."
+    },
+    {
+      "front": "Skill",
+      "back": "Méthode réutilisable portée par des instructions et des ressources éventuelles."
+    },
+    {
+      "front": "Outil",
+      "back": "Fonction ou service qui réalise une opération, comme lire un fichier ou exécuter un contrôle."
+    },
+    {
+      "front": "MVP",
+      "back": "Première version limitée qui apporte un service vérifiable à un utilisateur identifié."
+    },
+    {
+      "front": "Contexte",
+      "back": "Informations nécessaires à la tâche en cours. Leur sélection et leur actualité influencent le résultat."
+    },
+    {
+      "front": "Mémoire persistante",
+      "back": "Informations conservées entre plusieurs exécutions. Elles demandent une provenance, une mise à jour et une gestion des accès."
+    },
+    {
+      "front": "Revue humaine",
+      "back": "Examen du résultat au regard des critères et de son usage, avec une décision explicite."
+    },
+    {
+      "front": "Issue",
+      "back": "Anomalie suivie avec preuve, gravité, responsable et condition de clôture. Le mot peut aussi désigner le résultat d’un processus."
+    },
+    {
+      "front": "Reprise",
+      "back": "Retour au dernier état connu et vérifié pour poursuivre ou annuler proprement une mission."
+    },
+    {
+      "front": "Preuve de production",
+      "back": "Élément conservé qui permet de vérifier une action, un test, une source ou une décision."
+    }
+  ],
+  "taxonomy": [
+    {
+      "criterion": "Flux de décision",
+      "values": "Déterministe, chemin prédéfini avec LLM, décisions dynamiques par LLM",
+      "evidence": "Inspecter le code ou le journal pour identifier qui choisit la prochaine action."
+    },
+    {
+      "criterion": "Outils et effets autorisés",
+      "values": "Lecture, écriture isolée, écriture réelle limitée, action externe",
+      "evidence": "Lister les outils disponibles et les permissions réellement appliquées."
+    },
+    {
+      "criterion": "Mémoire",
+      "values": "Sans mémoire, contexte de session, stockage persistant contrôlé",
+      "evidence": "Identifier le lieu de stockage, la durée de conservation et le mécanisme de mise à jour."
+    },
+    {
+      "criterion": "Déclenchement",
+      "values": "Demande humaine, événement, horaire, condition observée",
+      "evidence": "Identifier le déclencheur et la condition qui autorise une nouvelle exécution."
+    },
+    {
+      "criterion": "Supervision",
+      "values": "A0 assistance, A1 copie isolée, A2 chaîne encadrée, A3 actions opérationnelles définies",
+      "evidence": "Vérifier les points d’approbation, les exceptions et la procédure d’arrêt. Échelle locale de cet atelier."
+    },
+    {
+      "criterion": "Coordination",
+      "values": "Un agent, rôles successifs, tâches parallèles, orchestrateur et agents spécialisés",
+      "evidence": "Examiner les échanges, les dépendances et le responsable du résultat final."
+    },
+    {
+      "criterion": "Environnement d’exécution",
+      "values": "Poste local, service distant, combinaison des deux",
+      "evidence": "Repérer où les calculs et les actions s’exécutent, ainsi que les données transmises."
+    },
+    {
+      "criterion": "Évaluation et traçabilité",
+      "values": "Contrôles déterministes, revue humaine, évaluations sur cas, journal des actions",
+      "evidence": "Vérifier les tests exécutés, les critères, les résultats conservés et leur lien avec le livrable."
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Fait inventé ou source périmée",
+      "example": "L’annonce conserve l’ancienne date de la séance.",
+      "control": "Définir les sources admises et comparer chaque fait important à sa source valide.",
+      "evidence": "Table des faits avec provenance, date et statut de validation."
+    },
+    {
+      "risk": "Instruction malveillante dans une entrée",
+      "example": "Un document demande d’ignorer la mission et d’envoyer les fichiers ailleurs.",
+      "control": "Traiter les documents comme des données et maintenir les permissions définies hors de leur contenu.",
+      "evidence": "Incident consigné et absence d’action hors périmètre. Un filtre de mots seul ne suffit pas."
+    },
+    {
+      "risk": "Exposition de données",
+      "example": "Un fichier de test contient des coordonnées personnelles inutiles.",
+      "control": "Minimiser les données et utiliser les jeux fictifs avant toute intégration réelle.",
+      "evidence": "Inventaire des champs et vérification des données transmises ou exportées."
+    },
+    {
+      "risk": "Action non autorisée",
+      "example": "Un brouillon est publié avant la revue prévue.",
+      "control": "Séparer préparation et publication. Donner à chaque outil les seuls droits nécessaires.",
+      "evidence": "Autorisation rattachée à l’action et journal des opérations."
+    },
+    {
+      "risk": "Boucle ou coût excessif",
+      "example": "L’agent répète une correction sans satisfaire le test.",
+      "control": "Limiter les tentatives, la durée et la dépense. Prévoir un arrêt et une reprise décidée.",
+      "evidence": "Compteurs, seuil atteint et motif de la prochaine tentative."
+    },
+    {
+      "risk": "Erreur propagée entre étapes",
+      "example": "Une donnée erronée alimente la fiche puis le site et le script vidéo.",
+      "control": "Contrôler les faits à l’entrée et conserver un contenu de référence versionné.",
+      "evidence": "Lien entre la version source et chacune des sorties."
+    },
+    {
+      "risk": "Validation dépendante du producteur",
+      "example": "L’agent rédacteur déclare sa réponse exacte sans preuve distincte.",
+      "control": "Fixer les critères avant production et contrôler les points importants par un autre moyen.",
+      "evidence": "Revue fondée sur le livrable, les sources et les tests plutôt que sur l’assurance exprimée."
+    },
+    {
+      "risk": "Perte de maîtrise et de reprise",
+      "example": "Le participant ne sait pas expliquer une sortie ou retrouver la version précédente.",
+      "control": "Conserver un journal, tester une reprise et demander une explication suivie d’une modification.",
+      "evidence": "Dernier état vérifié retrouvé et correction réalisée avec une justification compréhensible."
+    }
+  ],
+  "mvps": [
+    {
+      "id": "mvp-annonce",
+      "title": "Une annonce factuelle contrôlée",
+      "user": "Formateur",
+      "problem": "Préparer un message cohérent à partir d’un brief et de sources à jour.",
+      "scope": "Un brouillon local, une table des faits et une revue. Aucun envoi externe.",
+      "acceptance": "Tous les faits requis sont présents, l’ancienne version est écartée et l’action demandée est unique.",
+      "level": "A1 ou A2 supervisé"
+    },
+    {
+      "id": "mvp-fiche",
+      "title": "Une fiche pédagogique vérifiable",
+      "user": "Enseignant ou coach",
+      "problem": "Transformer un contenu validé en exercice adapté au niveau du public.",
+      "scope": "Une fiche, un corrigé et une grille. Relecture pédagogique avant usage.",
+      "acceptance": "L’exercice est réalisable avec les données fournies et le corrigé est vérifié.",
+      "level": "A1 supervisé"
+    },
+    {
+      "id": "mvp-site",
+      "title": "Une page de présentation testée",
+      "user": "Porteur de projet",
+      "problem": "Présenter une offre ou un atelier avec un parcours utilisateur simple.",
+      "scope": "Une page Vite avec texte validé, navigation et destination de test.",
+      "acceptance": "Construction réussie, navigation au clavier, lisibilité mobile et liens contrôlés.",
+      "level": "A1 ou A2 supervisé"
+    },
+    {
+      "id": "mvp-issues",
+      "title": "Un tri d’incidents avec preuve",
+      "user": "Responsable de production",
+      "problem": "Distinguer erreur réelle, absence prévue de travail et demande incomplète.",
+      "scope": "Classement de cas fictifs et proposition de traitement. Pas de clôture automatique réelle.",
+      "acceptance": "Chaque cas possède une catégorie, une preuve et une prochaine action justifiée.",
+      "level": "A0 puis A1"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+name: Mission de production
+description: Cadrer un résultat avant de déléguer.
+title: "[MISSION] "
+body:
+  - type: textarea
+    id: resultat
+    attributes:
+      label: Utilisateur, objectif et livrable attendu
+    validations:
+      required: true
+  - type: textarea
+    id: entrees
+    attributes:
+      label: Entrées autorisées, provenance et périmètre des outils
+    validations:
+      required: true
+  - type: textarea
+    id: reception
+    attributes:
+      label: Critères, budgets, conditions d’arrêt et responsable de validation
+    validations:
+      required: true

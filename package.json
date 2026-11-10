@@ -1,0 +1,25 @@
+{
+  "name": "atelier-ln-ia-agents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Atelier LN-IA — comprendre, construire, pratiquer et produire avec les agents IA",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "node scripts/prepare-public.mjs && vite build && node scripts/build-offline.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate-pack.mjs",
+    "demo": "node scripts/demo.mjs",
+    "check": "npm run validate && npm test && npm run build"
+  },
+  "dependencies": {
+    "bootstrap": "5.3.8"
+  },
+  "devDependencies": {
+    "vite": "8.3.7"
+  }
+}

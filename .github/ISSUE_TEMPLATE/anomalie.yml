@@ -1,0 +1,28 @@
+name: Anomalie de production
+description: Décrire une preuve, son impact et le contrôle de correction.
+title: "[ISSUE] "
+body:
+  - type: textarea
+    id: preuve
+    attributes:
+      label: Résultat attendu et preuve de l’écart
+    validations:
+      required: true
+  - type: dropdown
+    id: gravite
+    attributes:
+      label: Gravité
+      options:
+        - Bloquante — empêche la livraison
+        - Majeure — correction avant acceptation
+        - Mineure — amélioration documentée
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Étapes, entrées fictives et version pour reproduire
+  - type: textarea
+    id: cloture
+    attributes:
+      label: Responsable et preuve exigée pour clôturer

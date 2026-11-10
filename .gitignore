@@ -1,0 +1,31 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.vite/
+.sites/
+.sites-preview/
+
+# Sorties reconstruites et archives locales de distribution.
+dist/
+public/ressources/
+public/affiches/
+*.zip
+
+# Rendus de contrôle, essais écartés et chemins propres au poste.
+livrables/affiches-ln-ia/editorial-v3/controle-pdf/
+livrables/affiches-ln-ia/editorial-v3/essais/
+livrables/affiches-ln-ia/editorial-v3/provenance-images.json
+__pycache__/
+*.pyc
+
+# Versions écartées conservées localement.
+/livrables/affiches-ln-ia/*
+!/livrables/affiches-ln-ia/editorial-v3/
+!/livrables/affiches-ln-ia/affiche-generale-editoriale-v2.png
+# Manifeste du ZIP original, remplacé par le suivi Git pour cette publication.
+/MANIFESTE-SHA256.txt
+
+/livrables/publication-github-pages/
